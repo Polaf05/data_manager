@@ -37,18 +37,18 @@ button {
   background: radial-gradient(
     ellipse at left bottom,
     rgba(95, 124, 173) 0%,
-    rgba(81, 110, 161) 59%,
-    rgba(118, 152, 211) 100%
+    rgb(103, 153, 238) 59%,
+    rgb(37, 79, 153) 100%
   );
   box-shadow: 0 50px 70px -20px rgba(0, 0, 0, 0.8);
 }
 
-.login .loginContainer label {
+
+.login .loginContainer h1{
   color: white;
-  margin: 14px 0;
-  display: block;
-  font-size: 22px;
+  font-size: 35px;
   line-height: 1;
+  align-self: center;
 }
 
 .login .loginContainer input {
@@ -60,6 +60,9 @@ button {
   background: rgba(255, 255, 255, 0.1);
   color: #fff;
   letter-spacing: 1px;
+  text-align: center;
+  margin-top: 4vh;
+  border-radius: 5%;
 }
 
 .login .loginContainer .btnContainer {

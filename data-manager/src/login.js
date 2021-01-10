@@ -14,12 +14,12 @@ const login = (props) => {
     return(
         <section className="login">
             <div className="loginContainer">
-                <label for="">Email</label>
-                <input type="text" autoFocus required value={email} onChange= {(e) => setEmail(e.target.value)} />
+                <h1>LOGIN</h1> 
+                
+                <input type="text" autoFocus required value={email} onChange= {(e) => setEmail(e.target.value)} placeholder="Email"/>
                 <p className="errorMsg">{emailError}</p>
-
-                <label for="">Password</label>
-                <input type="password" autoFocus required value={password} onChange= {(e) => setPassword(e.target.value)} />
+                
+                <input type="password" autoFocus required value={password} onChange= {(e) => setPassword(e.target.value)} placeholder="Password"/>
                 <p className="errorMsg">{passwordError}</p>
 
                 <div className="btnContainer">
