@@ -3,6 +3,7 @@
 ## install dependencies
 
 cd data_manager
+
 npm install
 
 ## install firebase
