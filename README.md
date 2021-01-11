@@ -1,8 +1,8 @@
 # data_manager
 
-## Create react app
+## install dependencies
 
-npx create-react-app data-manager
+npm install
 
 ## install firebase
 
