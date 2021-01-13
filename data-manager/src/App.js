@@ -10,6 +10,7 @@ function App() {
   const [password, setPassword] = useState('');
   const [emailError, setEmailError] = useState('');
   const [passwordError, setPasswordError] = useState('');
+  const [hasAccount, setHasAccount] = useState(false);
 
   const handleLogin = () => {
     clearError();
@@ -22,8 +23,26 @@ function App() {
         case "auth/wrong-password":
           setPasswordError(error.message);
           break;
+        default:
       }
 
+    });
+  };
+
+  // handling signup for user
+  const handleSignup = () => {
+    clearError();
+    firebase.auth().createUserWithEmailAndPassword(email, password).catch((error) =>{
+      switch(error.code){
+        case "auth/email-already-in-use":
+        case "auth/invalid-email":
+          setEmailError(error.message);
+          break;
+        case "auth/weak-password":
+          setPasswordError(error.message);
+          break;
+        default:
+      }
     });
   };
 
@@ -67,13 +86,14 @@ function App() {
        setEmail = {setEmail} 
        password = {password} 
        setPassword = {setPassword}
-       handleLogin = {handleLogin} 
+       handleLogin = {handleLogin}
+       handleSignup = {handleSignup}
+       hasAccount = {hasAccount}
+       setHasAccount = {setHasAccount}
        emailError = {emailError} 
        passwordError = {passwordError}
        />
       )}
-       
-       
     </div>
   );
 }
