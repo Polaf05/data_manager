@@ -1,6 +1,8 @@
 import React from 'react';
 
 const login = (props) => {
+
+    //props declaration
     const {
         email,
         setEmail,
