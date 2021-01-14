@@ -6,6 +6,8 @@ cd data_manager
 
 npm install
 
+npm install react-router-dom
+
 ## install firebase
 
 npm install firebase
