@@ -4,6 +4,8 @@ import Login from './login';
 import Account from './account';
 
 function LoginScreen() {
+
+  //states for constants
   const [user, setUser] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -11,6 +13,7 @@ function LoginScreen() {
   const [passwordError, setPasswordError] = useState('');
   const [hasAccount, setHasAccount] = useState(false);
 
+  //handle login
   const handleLogin = () => {
     clearError();
     firebase.auth().signInWithEmailAndPassword(email, password).catch((error) =>{
@@ -44,12 +47,12 @@ function LoginScreen() {
       }
     });
   };
-
+  //hadles logout functions
   const handleLogout = () => {
     firebase.auth().signOut();
   };
 
-
+  //use effects to check user states
   useEffect(() =>{
     firebase.auth().onAuthStateChanged((user) =>{
         if(user){
@@ -61,12 +64,12 @@ function LoginScreen() {
         }
       });
   }, []);
-
+  //clears input
   const clear = () => {
     setEmail('');
     setPassword('');
   };
-  
+  //clear error message
   const clearError = () => {
     setEmailError('');
     setPasswordError('');
